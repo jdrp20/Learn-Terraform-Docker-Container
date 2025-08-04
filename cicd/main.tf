@@ -21,11 +21,6 @@ import {
   id = "/subscriptions/e973f371-80ef-4813-9adc-d4c2f2b1c972/resourceGroups/cicd-group/providers/Microsoft.Storage/storageAccounts/continousdeployment"
 }
 
-/*import {
-  to = azurerm_resource_group.rg
-  id = "/subscriptions/e973f371-80ef-4813-9adc-d4c2f2b1c972/resourceGroups/cicd-group/providers/Microsoft.Storage/storageAccounts/continousdeployment"
-}*/
-
 resource "azurerm_storage_container" "example" {
   name                  = "jonyreyes"
   storage_account_id    = azurerm_storage_account.storage.id
@@ -35,4 +30,16 @@ resource "azurerm_storage_container" "example" {
 import {
   to = azurerm_storage_container.example
   id = "/subscriptions/e973f371-80ef-4813-9adc-d4c2f2b1c972/resourceGroups/cicd-group/providers/Microsoft.Storage/storageAccounts/continousdeployment/blobServices/default/containers/jonyreyes"
+}
+
+resource "azurerm_storage_container" "conatiner_jony" {
+  name                  = "container_jonyreyes"
+  storage_account_id    = azurerm_storage_account.storage.id
+  container_access_type = "container"
+}
+
+resource "azurerm_storage_container" "conatiner_reyes" {
+  name                  = "reyes"
+  storage_account_id    = azurerm_storage_account.storage.id
+  container_access_type = "container"
 }
