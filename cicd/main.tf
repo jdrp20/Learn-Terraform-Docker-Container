@@ -31,3 +31,8 @@ resource "azurerm_storage_container" "example" {
   storage_account_id    = azurerm_storage_account.storage.id
   container_access_type = "container"
 }
+
+import {
+  to = azurerm_storage_container.example
+  id = "/subscriptions/e973f371-80ef-4813-9adc-d4c2f2b1c972/resourceGroups/cicd-group/providers/Microsoft.Storage/storageAccounts/continousdeployment/blobServices/default/containers/jonyreyes"
+}
